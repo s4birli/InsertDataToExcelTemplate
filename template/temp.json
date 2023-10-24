@@ -1,0 +1,21 @@
+{
+  "excelFilePath": "./files/excel.xlsx",
+  "outPutFilePath": "./files/output.xlsx",
+  "dataFilePath": "./data/data.json",
+  "desiredFileName": "custom_name.xlsx",
+  "sheet": "Sheet2",
+  "startIndex": 24,
+  "cell": {
+    "height": 40,
+    "font": {
+      "name": "Arial",
+      "size": 16,
+      "bold": true
+    },
+    "alignment": { "vertical": "middle", "horizontal": "center" },
+    "extra": [
+      { "index": 3, "valueParse": "parseInt", "numFmt": "#,##0" },
+      { "index": 5, "alignment": { "horizontal": "left" } }
+    ]
+  }
+}
