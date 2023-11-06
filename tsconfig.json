@@ -5,14 +5,9 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "outDir": "./public"
   },
-  "include": [
-    "types/**/*.ts", // or wherever your .ts files are
-    "types/**/*.d.ts" // or the specific path to your type definitions
-  ],
-  "exclude": [
-    "node_modules"
-    // ... any other directories you usually exclude
-  ]
+  "include": ["types/**/*.ts", "types/**/*.d.ts"],
+  "exclude": ["node_modules"]
 }
