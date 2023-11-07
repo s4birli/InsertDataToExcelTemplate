@@ -22,6 +22,10 @@ app.use(cors());
 app.use(fileUpload());
 app.use(bodyParser.json());
 
+app.get("/", (req: any, res: any) => {
+  res.send("Hello World!");
+});
+
 app.get("/updateExcel", excelController);
 
 app.get("/excelList", dbMiddleware, excelListController);
