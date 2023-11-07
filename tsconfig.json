@@ -6,8 +6,8 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "./public"
+    "outDir": "dist"
   },
-  "include": ["types/**/*.ts", "types/**/*.d.ts"],
+  "include": ["src/types/**/*.ts", "src/types/**/*.d.ts"],
   "exclude": ["node_modules"]
 }
