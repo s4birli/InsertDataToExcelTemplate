@@ -2,20 +2,17 @@ import express from "express";
 const fileUpload = require("express-fileupload");
 import cors from "cors";
 const bodyParser = require("body-parser");
-import dbMiddleware from "./src/middleware/dbMiddleware";
+import dbMiddleware from "./middleware/dbMiddleware";
 
-import excelController from "./src/controller/excelController";
-import {
-  fileController,
-  deleteController,
-} from "./src/controller/fileController";
-import { dataController } from "./src/controller/dataController";
-import excelListController from "./src/controller/excelListController";
-import { updateController } from "./src/controller/updateController";
+import excelController from "./controller/excelController";
+import { fileController, deleteController } from "./controller/fileController";
+import { dataController } from "./controller/dataController";
+import excelListController from "./controller/excelListController";
+import { updateController } from "./controller/updateController";
 import {
   configGetController,
   configUpdateController,
-} from "./src/controller/configController";
+} from "./controller/configController";
 require("dotenv").config();
 
 const app = express();
