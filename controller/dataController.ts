@@ -21,9 +21,11 @@ interface Filter {
 
 export async function dataController(req: any, res: any) {
   try {
-    const { id, page, rowsCount, sort, filters } = req.query;
+    debugger;
+
+    const { id, first, rowsCount, sort, filters } = req.query;
     const result = await getData(
-      { id, page, rowsCount, sort, filters },
+      { id, first, rowsCount, sort, filters },
       req.db
     );
 
@@ -37,13 +39,13 @@ export async function dataController(req: any, res: any) {
 export async function getData(
   {
     id,
-    page,
+    first,
     rowsCount,
     sort,
     filters,
   }: {
     id: string;
-    page: string;
+    first: string;
     rowsCount: string;
     sort: any;
     filters: Filter;
@@ -96,14 +98,12 @@ export async function getData(
       filterQuery = { $and: globalAndConditions };
     }
   }
-
   const query = { file_id: new ObjectId(id), ...filterQuery };
   if (Object.keys(filterQuery).length > 0) {
     query["$and"] = (query["$and"] || []).concat(filterQuery);
   }
-
   const options: any = {
-    skip: parseInt(page, 10) * parseInt(rowsCount, 10),
+    skip: parseInt(first),
     limit: parseInt(rowsCount, 10),
     sort: sort
       ? { [`data.${sort.field}`]: sort.order === "1" ? 1 : -1 }
