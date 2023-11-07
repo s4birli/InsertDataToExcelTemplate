@@ -2,13 +2,15 @@
   "name": "insertdatatoexceltemplate",
   "version": "1.0.0",
   "description": "This repo shows how to insert data into excel template without losing format and styles. Typescript/NodeJS/Express",
-  "main": "app.ts",
+  "main": "index.js",
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.ts"
+    "start": "ts-node app.ts",
+    "dev": "nodemon --exec ts-node app.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
